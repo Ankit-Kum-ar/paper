@@ -1,0 +1,5 @@
+export { default as AboutHero } from './AboutHero'
+export { default as Mission } from './Mission'
+export { default as CoreValues } from './CoreValues'
+export { default as Founder } from './Founder'
+export { default as AnimatedBackground } from './AnimatedBackground'
