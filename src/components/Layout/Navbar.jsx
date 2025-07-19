@@ -28,7 +28,7 @@ const Navbar = () => {
 
 	return (
 		<motion.nav
-			className="relative bg-base-100/95 shadow-sm border-b border-base-200 backdrop-blur-md"
+			className="relative hidden md:block bg-base-100/95 shadow-sm border-b border-base-200 backdrop-blur-md"
 			initial="hidden"
 			animate="visible"
 			variants={navbarVariants}

@@ -4,6 +4,7 @@ import { ScrollbarStyles } from "./components/Layout"
 import { LazyLoading } from "./components/LazyLoading"
 import { AnimatePresence } from "framer-motion"
 import Loader from "./components/Loader"
+import { ScrollToTop } from "./components"
 
 // Lazy load components for better performance
 const Home = React.lazy(() => import("./pages/Home/Home"))
@@ -11,6 +12,7 @@ const About = React.lazy(() => import("./pages/About/About"))
 const ContactUs = React.lazy(() => import("./pages/ContactUs/ContactUs"))
 const Navbar = React.lazy(() => import("./components/Layout/Navbar"))
 const Footer = React.lazy(() => import("./components/Layout/Footer"))
+const MobileNavbar = React.lazy(() => import("./components/Layout/MobileNavbar")) 
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -31,6 +33,7 @@ function App() {
           <Loader key="loader" />
         ) : (
           <>
+            <ScrollToTop />
             <Suspense fallback={
               <div className="h-20 bg-[#1a1a1a] animate-pulse"></div>
             }>
@@ -40,6 +43,17 @@ function App() {
                 duration={0.5}
               >
                 <Navbar />
+              </LazyLoading>
+            </Suspense>
+            <Suspense fallback={
+              <div className="h-20 bg-[#1a1a1a] animate-pulse"></div>
+            }>
+              <LazyLoading 
+                animation="fadeIn" 
+                threshold={0.1} 
+                duration={0.5}
+              >
+                <MobileNavbar />
               </LazyLoading>
             </Suspense>
 
