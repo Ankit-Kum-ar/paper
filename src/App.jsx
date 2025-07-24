@@ -10,6 +10,7 @@ import { ScrollToTop } from "./components"
 const Home = React.lazy(() => import("./pages/Home/Home"))
 const About = React.lazy(() => import("./pages/About/About"))
 const ContactUs = React.lazy(() => import("./pages/ContactUs/ContactUs"))
+const Products = React.lazy(() => import("./pages/Products/Products"))
 const Navbar = React.lazy(() => import("./components/Layout/Navbar"))
 const Footer = React.lazy(() => import("./components/Layout/Footer"))
 const MobileNavbar = React.lazy(() => import("./components/Layout/MobileNavbar")) 
@@ -82,6 +83,18 @@ function App() {
                       <About />
                     </LazyLoading>
                   } 
+                />
+                <Route 
+                  path="/products" 
+                  element={
+                    <LazyLoading 
+                      animation="fadeIn" 
+                      threshold={0.1} 
+                      duration={0.8}
+                    >
+                      <Products />
+                    </LazyLoading>
+                  }
                 />
                 <Route 
                   path="/contact" 
